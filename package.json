@@ -1,0 +1,20 @@
+{
+  "name": "md-html-pdf",
+  "version": "1.0.0",
+  "description": "A project of playing with ways to make Markdown documentation readable and shareable everywhere.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/DeanHickerson/md-html-pdf",
+  "keywords": [
+    "markdown",
+    "pdf",
+    "html"
+  ],
+  "author": "Dean Hickerson",
+  "license": "ISC",
+  "dependencies": {
+    "showdown": "^1.9.1"
+  }
+}
