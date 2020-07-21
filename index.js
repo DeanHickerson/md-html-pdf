@@ -1,19 +1,20 @@
 const showdown = require('showdown');
-const fs = require('fs');
+const fs = require('fs').promises;
 const converter = new showdown.Converter();
-const args = process.env.slice(2);
+const args = process.argv.slice(2);
 
 (async () => {
     let mdFile;
     let htmlFile;
-    if(args.length > 1) {
+    if(args.length > 0) {
         mdFile = args[0];
         if(args.length > 1) {
             htmlFile = args[1];
         }
     } else {
-        console.error(`please provide a target file name to the node arguments. Output file name is optional.`);
+        console.error(`Please provide a target file name to the node arguments. Output file name is optional.`);
     }
+    console.log(mdFile);
     let css = await fs.readFile(`gfm.min.css`,`utf-8`,(err,data) => data);
     let md = await fs.readFile(`${mdFile}`,`utf-8`,(err,data) => data);
     let output = `<!DOCTYPE html>
