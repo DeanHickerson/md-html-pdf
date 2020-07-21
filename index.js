@@ -14,7 +14,7 @@ const args = process.env.slice(2);
     } else {
         console.error(`please provide a target file name to the node arguments. Output file name is optional.`);
     }
-    let css = await fs.readFile(`gfm.css`,`utf-8`,(err,data) => data);
+    let css = await fs.readFile(`gfm.min.css`,`utf-8`,(err,data) => data);
     let md = await fs.readFile(`${mdFile}`,`utf-8`,(err,data) => data);
     let output = `<!DOCTYPE html>
     <html lang="en">
@@ -22,9 +22,12 @@ const args = process.env.slice(2);
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${mdFile}</title>
-        <style>${css}</style>
+        <style>
+        ${css}
+        .markdown-body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}@media (max-width:767px){.markdown-body{padding:15px}}
+        </style>
     </head>
-    <body>
+    <body class="markdown-body">
         ${converter.makeHtml(md)}
     </body>
     </html>`;
