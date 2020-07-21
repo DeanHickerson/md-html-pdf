@@ -4,7 +4,7 @@
   "description": "A project of playing with ways to make Markdown documentation readable and shareable everywhere.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": "https://github.com/DeanHickerson/md-html-pdf",
   "keywords": [
