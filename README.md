@@ -9,3 +9,18 @@ OR
 ```bash
 node index.js <INPUT_MARKDOWN_FILE> <OUTPUT_HTML_FILE>
 ```
+
+## To Do:
+- [ ] Build html render and PDF creation
+- [ ] Handle file paths better for the auto new file name
+
+
+## Same Supported Elements
+
+|Column 🚀|Header 🤟🏼|Names 💩|
+|:--|:--:|--:|
+|Some|Row|Data|
+|Some|more row (note the formatted text...) |data|
+
+- Emojis 🔥
+- ~~Strikethrough~~
