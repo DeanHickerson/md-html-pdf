@@ -13,6 +13,8 @@ node index.js <INPUT_MARKDOWN_FILE> <OUTPUT_HTML_FILE>
 ## To Do:
 - [x] Build html render and PDF creation
 - [x] Handle file paths better for the auto new file name
+- [ ] Turn it into a Electron App?
+- [ ] Make it a web app with Vue.js?
 
 
 ## Some Supported Elements
