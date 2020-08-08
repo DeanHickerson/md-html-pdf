@@ -1,5 +1,6 @@
 const showdown = require('showdown');
 const fs = require('fs');
+const path = require('path');
 const converter = new showdown.Converter({
 	tables:true,
 	tasklists:true,
@@ -15,6 +16,10 @@ const args = process.argv.slice(2);
         mdFile = args[0];
         if(args.length > 1) {
             htmlFile = args[1];
+            // check for file extension in the supplied name
+            if(htmlFile.search(/\.html/g) == -1) {
+                htmlFile += '.html';
+            }
         } else {
             htmlFile = `${mdFile.slice(0,-3)}.html`;
         }
@@ -28,7 +33,7 @@ const args = process.argv.slice(2);
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>${mdFile}</title>
+        <title>${htmlFile.slice(0,-5) || path.basename(mdFile).slice(0,3)}</title>
         <style>
         ${css}
         .markdown-body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}@media (max-width:767px){.markdown-body{padding:15px}}table{word-break:break-word;}

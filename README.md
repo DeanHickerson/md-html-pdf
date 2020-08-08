@@ -15,7 +15,7 @@ node index.js <INPUT_MARKDOWN_FILE> <OUTPUT_HTML_FILE>
 - [ ] Handle file paths better for the auto new file name
 
 
-## Same Supported Elements
+## Some Supported Elements
 
 |Column 🚀|Header 🤟🏼|Names 💩|
 |:--|:--:|--:|
