@@ -1,6 +1,7 @@
 const showdown = require('showdown');
 const fs = require('fs');
 const path = require('path');
+const puppeteer = require('puppeteer');
 const converter = new showdown.Converter({
 	tables:true,
 	tasklists:true,
@@ -46,4 +47,18 @@ const args = process.argv.slice(2);
     await fs.promises.writeFile(`${htmlFile}`,output,err => {
         if(err){console.log(err)}
     });
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.setContent(output);
+    await page.pdf({
+        path: `${htmlFile.slice(0,-5)}.pdf`,
+        format: 'Letter',
+        margin: {
+            top: '.5in',
+            bottom: '.5in',
+            left: '.5in',
+            right: '.5in'
+        }
+    });
+    await browser.close();
 })();

@@ -15,6 +15,7 @@
   "author": "Dean Hickerson",
   "license": "ISC",
   "dependencies": {
+    "puppeteer": "^5.2.1",
     "showdown": "^1.9.1"
   }
 }
