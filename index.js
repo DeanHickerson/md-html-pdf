@@ -37,7 +37,8 @@ const args = process.argv.slice(2);
         <title>${htmlFile.slice(0,-5) || path.basename(mdFile).slice(0,3)}</title>
         <style>
         ${css}
-        .markdown-body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}@media (max-width:767px){.markdown-body{padding:15px}}table{word-break:break-word;}
+		.markdown-body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}@media (max-width:767px){.markdown-body{padding:15px}}table{word-break:break-word;}
+		html {-webkit-print-color-adjust: exact;}
         </style>
     </head>
     <body class="markdown-body">
@@ -49,7 +50,7 @@ const args = process.argv.slice(2);
     });
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.setContent(output);
+	await page.setContent(output);
     await page.pdf({
         path: `${htmlFile.slice(0,-5)}.pdf`,
         format: 'Letter',
