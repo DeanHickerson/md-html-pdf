@@ -38,6 +38,9 @@ const args = process.argv.slice(2);
         <style>
         ${css}
 		.markdown-body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:45px}@media (max-width:767px){.markdown-body{padding:15px}}table{word-break:break-word;}
+		h1,h2,h3,h4,h5 {
+			page-break-after: avoid;
+		}
 		html {-webkit-print-color-adjust: exact;}
         </style>
     </head>
