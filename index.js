@@ -41,7 +41,7 @@ const args = process.argv.slice(2);
 		h1,h2,h3,h4,h5 {
 			page-break-after: avoid;
 		}
-		html {-webkit-print-color-adjust: exact;}
+		html {-webkit-print-color-adjust: exact !important; -webkit-filter: opacity(1) !important;}
         </style>
     </head>
     <body class="markdown-body">
@@ -56,7 +56,8 @@ const args = process.argv.slice(2);
 	await page.setContent(output);
     await page.pdf({
         path: `${htmlFile.slice(0,-5)}.pdf`,
-        format: 'Letter',
+		format: 'Letter',
+		printBackground: 'true',
         margin: {
             top: '.5in',
             bottom: '.5in',
