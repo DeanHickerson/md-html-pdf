@@ -6,7 +6,8 @@ const converter = new showdown.Converter({
 	tables:true,
 	tasklists:true,
 	strikethrough:true,
-	emoji:true
+	emoji:true,
+	ghCompatibleHeaderId:true
 });
 const args = process.argv.slice(2);
 
